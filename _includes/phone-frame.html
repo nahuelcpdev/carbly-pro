@@ -1,0 +1,18 @@
+{% comment %}
+  Phone frame include.
+  Params (via include vars):
+    light    = path to light-mode image (e.g. /assets/img/snapshots/dashboard-light.png)
+    dark     = path to dark-mode image
+    alt      = descriptive alt text
+    priority = (optional) "high" to set fetchpriority=high on the img (hero only)
+    object_position = (optional) e.g. "top" for the dashboard feature card crop
+{% endcomment %}
+<figure class="phone-frame">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="{{ include.dark }}">
+    <img src="{{ include.light }}"
+         alt="{{ include.alt }}"
+         {% if include.priority == "high" %}fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}
+         {% if include.object_position %}style="object-position: {{ include.object_position }};"{% endif %}>
+  </picture>
+</figure>

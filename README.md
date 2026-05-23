@@ -9,6 +9,7 @@ Served by GitHub Pages from `main` at the apex domain `carbly.pro`.
 - `/` — landing
 - `/privacy` — Privacy Policy
 - `/terms` — Terms of Service
+- `/support` — Support
 
 ## Source of truth
 
@@ -16,7 +17,7 @@ The Markdown content of `privacy.md` and `terms.md` is mirrored from [`nahuelcpd
 
 ## Stack
 
-- GitHub Pages (Jekyll, theme: `jekyll-theme-cayman`)
+- GitHub Pages (Jekyll, custom `_layouts/`, v7 Clinic design system)
 - Custom apex domain: `carbly.pro` via GoDaddy DNS
 
 ## DNS setup (one-time, manual)

@@ -1,6 +1,6 @@
 title: Carbly
 description: iOS low-carb + fasting companion. Scan food, track fasts, surface nutritional intelligence.
 url: https://carbly.pro
-theme: jekyll-theme-cayman
+permalink: pretty
 plugins:
   - jekyll-seo-tag
