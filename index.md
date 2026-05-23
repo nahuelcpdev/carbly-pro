@@ -17,6 +17,6 @@ Coming soon to the App Store.
 
 ## Contact
 
-- Support: `support@carbly.pro`
-- Privacy: `privacy@carbly.pro`
-- Legal: `legal@carbly.pro`
+- Support: `nahuelcp.dev@gmail.com`
+- Privacy: `nahuelcp.dev@gmail.com`
+- Legal: `nahuelcp.dev@gmail.com`

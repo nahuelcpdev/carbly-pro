@@ -22,16 +22,16 @@ This policy is written to satisfy the requirements of Apple's App Store Review G
 The data controller for personal information processed through the App is:
 
 **Carbly** (operated by the developer registered on the Apple App Store as **nahuelcpdev**).
-Contact: `privacy@carbly.pro`
-Data Protection contact (DPO): `privacy@carbly.pro`
+Contact: `nahuelcp.dev@gmail.com`
+Data Protection contact (DPO): `nahuelcp.dev@gmail.com`
 
-If you are in the European Economic Area or the United Kingdom and need a local representative, contact `privacy@carbly.pro` and we will route your request to the appropriate channel.
+If you are in the European Economic Area or the United Kingdom and need a local representative, contact `nahuelcp.dev@gmail.com` and we will route your request to the appropriate channel.
 
 ---
 
 ## 2. Summary of what we collect
 
-The sections below describe every category of data we collect. This one-paragraph summary mirrors the App Privacy Label published on the App Store listing and the `PrivacyInfo.xcprivacy` manifest shipped in the App binary. The two sources must agree 1:1; if you believe they differ, please email `privacy@carbly.pro`.
+The sections below describe every category of data we collect. This one-paragraph summary mirrors the App Privacy Label published on the App Store listing and the `PrivacyInfo.xcprivacy` manifest shipped in the App binary. The two sources must agree 1:1; if you believe they differ, please email `nahuelcp.dev@gmail.com`.
 
 | Category | Linked to you? | Purpose |
 |---|---|---|
@@ -110,7 +110,7 @@ All AI requests from the App go through our Cloudflare Worker at `ketocheck-work
 
 ### 4.2 AI provider (Anthropic)
 
-Scan images and the accompanying voice transcript text are sent to Anthropic's Claude Haiku 4.5 model for analysis. Anthropic acts as a data sub-processor. Anthropic retains API inputs and outputs for up to 30 days for trust, safety, and abuse-monitoring purposes, after which they are automatically deleted. Inputs and outputs are not used to train Anthropic's models under Anthropic's Commercial Terms. For questions about our data-processing arrangement with Anthropic, email `privacy@carbly.pro`.
+Scan images and the accompanying voice transcript text are sent to Anthropic's Claude Haiku 4.5 model for analysis. Anthropic acts as a data sub-processor. Anthropic retains API inputs and outputs for up to 30 days for trust, safety, and abuse-monitoring purposes, after which they are automatically deleted. Inputs and outputs are not used to train Anthropic's models under Anthropic's Commercial Terms. For questions about our data-processing arrangement with Anthropic, email `nahuelcp.dev@gmail.com`.
 
 **v5.0.0 addition — Weekly Intelligence digest:** If you are a Carbly Premium subscriber and have enabled Weekly Insights in Settings, the App also sends a structured summary of your aggregated weekly data (net-carb averages, fasting session counts, activity totals, streak counts, electrolyte log summaries — no raw food photos, no voice audio, no food names) to Anthropic's Claude Haiku 4.5 model via the Worker, once per Monday morning. The AI-generated weekly insight prose is returned to the App, stored in your `intelligence_digests` row in Supabase, and displayed in the App. The same 30-day Anthropic abuse-monitoring retention and data-sub-processor relationship described above applies; inputs and outputs are not used to train Anthropic's models. Weekly Insights can be disabled at any time in Settings → Intelligence.
 
@@ -149,7 +149,7 @@ Sentry receives crash stack traces, performance traces, breadcrumbs, and the ano
 For users in the European Economic Area, the United Kingdom, or Switzerland, the lawful bases on which we process personal information are:
 
 - **Performance of a contract (Art. 6(1)(b))** — processing food logs, fasting logs, profile inputs, subscription state, and Keychain session tokens is necessary to deliver the App's core functionality that you requested by installing and using it.
-- **Legitimate interests (Art. 6(1)(f))** — crash reports, performance traces, and bucketed analytics events are processed to keep the App stable and to understand which features work. We balance our interest in operational reliability and product improvement against your reasonable expectations. You may object to processing on this basis at any time by emailing `privacy@carbly.pro`.
+- **Legitimate interests (Art. 6(1)(f))** — crash reports, performance traces, and bucketed analytics events are processed to keep the App stable and to understand which features work. We balance our interest in operational reliability and product improvement against your reasonable expectations. You may object to processing on this basis at any time by emailing `nahuelcp.dev@gmail.com`.
 - **Consent (Art. 6(1)(a))** — where applicable (for example, in EU analytics-consent jurisdictions), we obtain opt-in consent before enabling non-essential analytics.
 - **Compliance with a legal obligation (Art. 6(1)(c))** — for example, responding to valid law enforcement requests.
 
@@ -164,7 +164,7 @@ Your data may be processed in the following jurisdictions:
 
 Transfers from the EEA, UK, or Switzerland to the United States or any other jurisdiction outside the UK and EEA rely on the European Commission's Standard Contractual Clauses, the UK International Data Transfer Addendum, or equivalent safeguards where available. Where a sub-processor is enrolled in the EU–US Data Privacy Framework, we rely on that framework.
 
-If you would like a copy of the specific safeguard that applies to a given transfer, email `privacy@carbly.pro`.
+If you would like a copy of the specific safeguard that applies to a given transfer, email `nahuelcp.dev@gmail.com`.
 
 ---
 
@@ -186,7 +186,7 @@ If you would like a copy of the specific safeguard that applies to a given trans
 | PostHog event data | Per PostHog product retention defaults |
 | RevenueCat purchase records | For the life of the anonymous user ID |
 
-Deleting your account triggers a cascade that removes your rows from `user_profiles`, `food_logs`, `fasting_logs`, and `daily_streaks` via the `auth.users(id) ON DELETE CASCADE` relationship. Worker logs and third-party sub-processor retention run on their own clocks listed above; we pass the deletion request through to RevenueCat and can submit erasure requests to the other sub-processors on your behalf when you email `privacy@carbly.pro`.
+Deleting your account triggers a cascade that removes your rows from `user_profiles`, `food_logs`, `fasting_logs`, and `daily_streaks` via the `auth.users(id) ON DELETE CASCADE` relationship. Worker logs and third-party sub-processor retention run on their own clocks listed above; we pass the deletion request through to RevenueCat and can submit erasure requests to the other sub-processors on your behalf when you email `nahuelcp.dev@gmail.com`.
 
 ---
 
@@ -204,7 +204,7 @@ You have the right to:
 - **Object to processing (Art. 21)** — including a specific right to object to any legitimate-interest processing described in section 5.
 - **Not be subject to automated decision-making (Art. 22)** — the App's AI scan output is informational and does not produce a legal or similarly significant effect on you.
 
-To exercise any of these rights, email `privacy@carbly.pro` with your anonymous user ID (found in Settings → Account). We respond within 30 days. You also have the right to lodge a complaint with your local supervisory authority.
+To exercise any of these rights, email `nahuelcp.dev@gmail.com` with your anonymous user ID (found in Settings → Account). We respond within 30 days. You also have the right to lodge a complaint with your local supervisory authority.
 
 ### 8.2 California (CCPA / CPRA)
 
@@ -217,17 +217,17 @@ California residents have the right to:
 - Limit the use of sensitive personal information.
 - Non-discrimination for exercising these rights.
 
-To submit a verifiable consumer request, email `privacy@carbly.pro` with your anonymous user ID. We respond within 45 days (with up to a 45-day extension where permitted). Because accounts are anonymous, we verify a request by matching the anonymous user ID the requester supplies against the account record and by sending a confirmation challenge to the requester's email of record.
+To submit a verifiable consumer request, email `nahuelcp.dev@gmail.com` with your anonymous user ID. We respond within 45 days (with up to a 45-day extension where permitted). Because accounts are anonymous, we verify a request by matching the anonymous user ID the requester supplies against the account record and by sending a confirmation challenge to the requester's email of record.
 
 ### 8.3 Other jurisdictions
 
-Residents of other jurisdictions (for example, Brazil under the LGPD, Canada under PIPEDA, Australia under the Privacy Act 1988) may have analogous rights. Email `privacy@carbly.pro` and we will route your request.
+Residents of other jurisdictions (for example, Brazil under the LGPD, Canada under PIPEDA, Australia under the Privacy Act 1988) may have analogous rights. Email `nahuelcp.dev@gmail.com` and we will route your request.
 
 ---
 
 ## 9. Children
 
-The App is rated 13+ on the App Store. We do not knowingly collect personal information from children under the age of 13. If you believe a child under 13 has provided personal information, email `privacy@carbly.pro` and we will delete the associated data. The onboarding flow includes a hard age gate that blocks under-18 users from the fasting feature entirely; the fasting timer and preset selector are unreachable for that age bracket.
+The App is rated 13+ on the App Store. We do not knowingly collect personal information from children under the age of 13. If you believe a child under 13 has provided personal information, email `nahuelcp.dev@gmail.com` and we will delete the associated data. The onboarding flow includes a hard age gate that blocks under-18 users from the fasting feature entirely; the fasting timer and preset selector are unreachable for that age bracket.
 
 ---
 
@@ -242,7 +242,7 @@ You can delete your account at any time from inside the App:
 
 The deletion flow calls our Cloudflare Worker endpoint `DELETE /api/account`. The Worker uses the Supabase service-role key (held server-side only) to call `auth.admin.deleteUser(userId)`. The `auth.users(id) ON DELETE CASCADE` relationship then removes your rows from `user_profiles`, `food_logs`, `fasting_logs`, and `daily_streaks`. The confirmation screen states explicitly: "This will delete your food logs, fasting history, streak data, and preferences permanently. This cannot be undone." (See the Carbly Terms of Service section on account termination for additional information.)
 
-If the in-app path is unavailable (for example, you have lost access to the device), you can submit a Data Subject Access Request by emailing `privacy@carbly.pro` with the anonymous user ID that appears in your prior App session. We will process the deletion within 30 days.
+If the in-app path is unavailable (for example, you have lost access to the device), you can submit a Data Subject Access Request by emailing `nahuelcp.dev@gmail.com` with the anonymous user ID that appears in your prior App session. We will process the deletion within 30 days.
 
 ---
 
@@ -279,7 +279,7 @@ We may update this Privacy Policy to reflect changes to our practices, our SDK m
 
 - The "Last updated" date at the top of this document will change.
 - Material changes (new data categories, new sub-processors with a different jurisdiction, changes to lawful basis) will be announced in the App on the first launch after the change, and (where we have your email of record) by email, at least 14 days before the change takes effect.
-- We will keep prior versions of this policy available on request at `privacy@carbly.pro`.
+- We will keep prior versions of this policy available on request at `nahuelcp.dev@gmail.com`.
 
 Continuing to use the App after a change becomes effective indicates acceptance of the updated policy.
 
@@ -287,10 +287,10 @@ Continuing to use the App after a change becomes effective indicates acceptance 
 
 ## 14. Contact
 
-- **General privacy questions:** `privacy@carbly.pro`
-- **Data Protection contact (EU / UK):** `privacy@carbly.pro`
-- **DSAR and erasure requests:** `privacy@carbly.pro` (include your anonymous user ID; 30-day SLA under GDPR, 45-day SLA under CCPA)
-- **Security reports:** `privacy@carbly.pro`
+- **General privacy questions:** `nahuelcp.dev@gmail.com`
+- **Data Protection contact (EU / UK):** `nahuelcp.dev@gmail.com`
+- **DSAR and erasure requests:** `nahuelcp.dev@gmail.com` (include your anonymous user ID; 30-day SLA under GDPR, 45-day SLA under CCPA)
+- **Security reports:** `nahuelcp.dev@gmail.com`
 
 If you prefer to write us, include "Carbly Privacy" in the subject line so your request is routed correctly.
 

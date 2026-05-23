@@ -210,7 +210,7 @@ We may update these Terms to reflect changes to the App, the legal environment, 
 
 - The "Last updated" date at the top of this document will change.
 - We will surface the change in the App on the first launch after it takes effect, at least 14 days before the change applies to continuing use, where the change is material.
-- We will keep prior versions available on request at `privacy@carbly.pro`.
+- We will keep prior versions available on request at `nahuelcp.dev@gmail.com`.
 
 Continuing to use the App after a change takes effect indicates acceptance of the updated Terms. If you do not agree, stop using the App and, if you wish, delete your account.
 
@@ -238,9 +238,9 @@ Privacy practices are governed by the [Carbly Privacy Policy](/privacy), publish
 
 ## 14. Contact
 
-- **General questions:** `support@carbly.pro`
-- **Privacy questions and DSAR:** `privacy@carbly.pro`
-- **Legal notices:** `legal@carbly.pro`
+- **General questions:** `nahuelcp.dev@gmail.com`
+- **Privacy questions and DSAR:** `nahuelcp.dev@gmail.com`
+- **Legal notices:** `nahuelcp.dev@gmail.com`
 
 Please include "Carbly Terms" or a relevant subject tag so your request is routed correctly.
 
