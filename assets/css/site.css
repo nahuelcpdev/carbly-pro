@@ -1824,14 +1824,14 @@ button { font-family: inherit; }
 
 .bento__scan-frame {
   position: absolute;
-  inset: auto 0 0 0;
+  inset: auto 24px 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding-bottom: 0;
 }
 .bento__scan-frame picture, .bento__scan-frame img {
-  width: 76%;
-  max-width: 320px;
+  width: 280px;
+  max-width: 100%;
   border-radius: 22px 22px 0 0;
   border: 1px solid var(--line);
   border-bottom: 0;
@@ -1841,7 +1841,7 @@ button { font-family: inherit; }
   position: absolute;
   top: 24px;
   left: 24px;
-  right: 24px;
+  right: 50%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1986,7 +1986,9 @@ button { font-family: inherit; }
   .bento__cell--scan { grid-column: span 4; grid-row: auto; min-height: 380px; }
   .bento__cell--score, .bento__cell--fast { grid-column: span 4; }
   .bento__cell--track, .bento__cell--electro, .bento__cell--ai { grid-column: span 4; min-height: 220px; }
-  .bento__scan-frame img, .bento__scan-frame picture { width: 320px; }
+  .bento__scan-text { right: 24px; }
+  .bento__scan-frame { inset: auto 0 0 0; justify-content: center; }
+  .bento__scan-frame img, .bento__scan-frame picture { width: 280px; }
 }
 @media (max-width: 600px) {
   .bento { grid-template-columns: 1fr; }
