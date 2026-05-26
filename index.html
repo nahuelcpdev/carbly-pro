@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F4F3F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1112" media="(prefers-color-scheme: dark)">
+  <title>Carbly — AI scanner for low-carb meals</title>
+  <meta name="description" content="Snap your meal. Carbly's AI logs net carbs, macros, and electrolytes in seconds. Now on the App Store.">
+  <link rel="icon" href="assets/img/app-icon.png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="/" aria-label="Carbly home">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="assets/img/app-icon-dark.png">
+          <img class="site-header__icon" src="assets/img/app-icon.png" alt="" width="28" height="28">
+        </picture>
+        <span>carbly</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Primary">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
+      </nav>
+      <a class="site-header__cta" href="#download">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============== HERO ============== -->
+    <section class="hero" data-screen-label="Hero">
+      <div class="hero__inner">
+
+        <div class="hero__copy">
+          <div class="hero__lead">
+            <div class="hero__lead-row">
+              <span class="ship-pill"><span class="ship-pill__dot"></span>Now on the App Store</span>
+              <span class="hero__version">v1.0 · iOS 17+ · 22 MB</span>
+            </div>
+            <h1 class="hero__h1">Snap.<br>Done<span class="hero__h1-period">.</span></h1>
+          </div>
+
+          <div class="hero__side">
+            <p class="hero__subhead">Skip the database. Photograph your meal — Carbly's AI logs net carbs, macros, and electrolytes in about four seconds. Built for low-carb, keto, and IF.</p>
+            <div class="hero__meta-row">
+              <div class="hero__meta">
+                <span class="eyebrow">Median scan</span>
+                <span class="hero__meta-val"><span class="mono">3.8s</span></span>
+              </div>
+              <div class="hero__meta">
+                <span class="eyebrow">Estimate range</span>
+                <span class="hero__meta-val"><span class="mono">±12%</span></span>
+              </div>
+              <div class="hero__meta">
+                <span class="eyebrow">Photos stored</span>
+                <span class="hero__meta-val"><span class="mono">0</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== THE FILM ===== -->
+        <div class="film" data-film>
+          <div class="film__stage">
+            <!-- Camera "REC" chrome -->
+            <div class="film__chrome">
+              <span class="film__chrome-left"><span class="film__rec"></span> REC · 1080P · 30FPS</span>
+              <span class="film__chrome-right">SCN <span data-scn>01</span>/05</span>
+            </div>
+
+            <!-- Caption -->
+            <div class="film__caption" data-caption>
+              <span class="film__caption-dot"></span>
+              <span data-caption-text>01 · POINT THE CAMERA</span>
+            </div>
+
+            <!-- Phone -->
+            <div class="film__phone">
+              <div class="film__notch"></div>
+              <div class="film__phone-screen">
+
+                <!-- SCENE 1: Camera viewfinder -->
+                <div class="scene scene-cam is-active" data-scene="cam">
+                  <div class="scene-cam__top">
+                    <span class="scene-cam__chip">×</span>
+                    <span class="scene-cam__chip">FLASH AUTO</span>
+                    <span class="scene-cam__chip">⚙</span>
+                  </div>
+                  <div class="scene-cam__modes">
+                    <span>BARCODE</span>
+                    <span class="is-current">PHOTO</span>
+                    <span>LABEL</span>
+                  </div>
+
+                  <div class="scene-cam__meal" data-meal-wrap></div>
+                  <div class="scene-cam__droptarget" data-drop-target>
+                    <image-slot id="meal-photo" shape="rounded" radius="14"
+                      src="assets/img/meal-burger.jpeg"
+                      placeholder="Drop meal photo">
+                    </image-slot>
+                  </div>
+
+                  <div class="scene-cam__bbox" data-bbox>
+                    <span class="scene-cam__bbox-label">Double Cheeseburger · 0.92</span>
+                  </div>
+
+                  <div class="scene-cam__reticle" data-reticle>
+                    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                      <path class="corner" d="M 8 22 L 8 8 L 22 8" />
+                      <path class="corner" d="M 78 8 L 92 8 L 92 22" />
+                      <path class="corner" d="M 8 78 L 8 92 L 22 92" />
+                      <path class="corner" d="M 78 92 L 92 92 L 92 78" />
+                    </svg>
+                  </div>
+
+                  <div class="scene-cam__bottom">
+                    <div class="scene-cam__thumb"></div>
+                    <div class="scene-cam__shutter" data-shutter></div>
+                    <div class="scene-cam__switch"></div>
+                  </div>
+                </div>
+
+                <!-- SCENE 2: Voice context / talk-to-food -->
+                <div class="scene scene-voice" data-scene="voice">
+                  <div class="scene-voice__top">
+                    <span class="back">‹ BACK</span>
+                    <span>STEP 2 OF 2</span>
+                    <span>SKIP</span>
+                  </div>
+                  <div class="scene-voice__photo">
+                    <div class="scene-voice__photo-inner"></div>
+                    <span class="scene-voice__photo-tag">PHOTO CAPTURED</span>
+                  </div>
+                  <div class="scene-voice__prompt">Tell Carbly about this meal.</div>
+                  <div class="scene-voice__prompt-sub">Tightens the estimate · optional</div>
+                  <div class="scene-voice__wave" data-voice-wave>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                  </div>
+                  <div class="scene-voice__transcript" data-voice-transcript>
+                    <span class="word" data-word="0">double cheeseburger<span class="sep"> · </span></span>
+                    <span class="word" data-word="1">brioche bun<span class="sep"> · </span></span>
+                    <span class="word" data-word="2">no fries<span class="sep"> · </span></span>
+                    <span class="word" data-word="3">extra cheese</span>
+                  </div>
+                  <div class="scene-voice__mic">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="3" width="6" height="11" rx="3"/>
+                      <path d="M5 11 a7 7 0 0 0 14 0"/>
+                      <line x1="12" y1="18" x2="12" y2="21"/>
+                      <line x1="9" y1="21" x2="15" y2="21"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- SCENE 2: Processing -->
+                <div class="scene scene-proc" data-scene="proc">
+                  <div class="scene-proc__top">
+                    <span>← BACK</span>
+                    <span>ANALYZING</span>
+                    <span>·</span>
+                  </div>
+                  <div class="scene-proc__card" data-proc-card>
+                    <div class="scene-proc__beam" data-proc-beam>
+                      <div class="scene-proc__beam-line"></div>
+                    </div>
+                  </div>
+                  <div class="scene-proc__status">
+                    <span>AI Estimate</span>
+                    <span class="scene-proc__dots"><span></span><span></span><span></span></span>
+                  </div>
+                  <div class="scene-proc__sub">
+                    <strong>Net carbs · macros · electrolytes</strong><br>
+                    Routing photo to model. Result discards image.
+                  </div>
+                </div>
+
+                <!-- SCENE 3: Result -->
+                <div class="scene scene-result" data-scene="result">
+                  <div class="scene-result__inner">
+                    <div class="scene-result__scroll" data-result-scroll>
+                      <div class="scene-result__header">
+                        <div class="scene-result__back">‹</div>
+                        <div class="scene-result__share"></div>
+                        <div class="scene-result__plate">
+                          <svg class="scene-result__plate-glyph" viewBox="0 0 64 64" fill="currentColor">
+                            <!-- fork -->
+                            <path d="M18 8 v18 a4 4 0 0 0 4 4 h0 v26 a3 3 0 0 0 6 0 v-26 h0 a4 4 0 0 0 4 -4 v-18 h-3 v14 h-2 v-14 h-3 v14 h-2 v-14 z"/>
+                            <!-- knife -->
+                            <path d="M44 8 c-4 4 -6 12 -6 22 c0 6 2 8 4 8 v18 a3 3 0 0 0 6 0 v-48 z"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="scene-result__pill-wrap">
+                        <div class="scene-result__pill" data-result-pill>
+                          <span class="scene-result__pill-dot"></span>
+                          OVER LIMIT
+                        </div>
+                      </div>
+
+                      <div class="scene-result__body">
+                        <h3 class="scene-result__title" data-result-title>Double Cheeseburger</h3>
+                        <div class="scene-result__confidence" data-result-conf>
+                          AI SCAN <span class="dot"></span> 92% CONFIDENCE
+                        </div>
+                        <div class="scene-result__carbs-eyebrow" data-result-carbs-label>
+                          <span class="scene-result__carbs-dot"></span> NET CARBS
+                        </div>
+                        <div class="scene-result__carbs" data-result-carbs>42g</div>
+                      </div>
+
+                      <div class="scene-result__health" data-result-health>
+                        <div class="scene-result__health-ring">
+                          <svg viewBox="0 0 52 52">
+                            <circle class="scene-result__health-ring-track" cx="26" cy="26" r="23" />
+                            <circle class="scene-result__health-ring-bar" cx="26" cy="26" r="23" />
+                          </svg>
+                          <div class="scene-result__health-num">52</div>
+                        </div>
+                        <div class="scene-result__health-text">
+                          <span class="scene-result__health-eyebrow">Health Score</span>
+                          <span class="scene-result__health-body">Most carbs are in the bun. Lettuce-wrap drops to ~6g.</span>
+                        </div>
+                      </div>
+
+                      <div class="scene-result__macros">
+                        <div class="macro-chip fat" data-result-macro>
+                          <span class="macro-chip__label">FAT</span>
+                          <span class="macro-chip__value">38g</span>
+                        </div>
+                        <div class="macro-chip protein" data-result-macro>
+                          <span class="macro-chip__label">PRO</span>
+                          <span class="macro-chip__value">32g</span>
+                        </div>
+                        <div class="macro-chip" data-result-macro>
+                          <span class="macro-chip__label">FIBER</span>
+                          <span class="macro-chip__value">2g</span>
+                        </div>
+                        <div class="macro-chip" data-result-macro>
+                          <span class="macro-chip__label">CAL</span>
+                          <span class="macro-chip__value">720</span>
+                        </div>
+                      </div>
+
+                      <div class="scene-result__electro" data-result-electro>
+                        <span class="scene-result__electro-eyebrow">Electrolytes</span>
+                        <div class="scene-result__electro-row">
+                          <div class="electro-cell na">
+                            <span class="electro-cell__top"><span class="electro-cell__dot"></span> NA</span>
+                            <span class="electro-cell__val">980mg</span>
+                          </div>
+                          <div class="electro-cell k">
+                            <span class="electro-cell__top"><span class="electro-cell__dot"></span> K</span>
+                            <span class="electro-cell__val">420mg</span>
+                          </div>
+                          <div class="electro-cell mg">
+                            <span class="electro-cell__top"><span class="electro-cell__dot"></span> MG</span>
+                            <span class="electro-cell__val">38mg</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="scene-result__note" data-result-note>
+                        <span class="scene-result__note-eyebrow">AI Note</span>
+                        <span class="scene-result__note-body">Brioche buns carry ~30g carbs. Swap for lettuce wrap or thin bun to drop net carbs &lt;10g.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- /phone-screen -->
+            </div>
+            <!-- /phone -->
+
+            <!-- Capture flash -->
+            <div class="flash" data-flash></div>
+          </div>
+          <!-- /stage -->
+
+          <!-- TRANSPORT -->
+          <div class="transport">
+            <button class="transport__playbtn" data-play aria-label="Play / pause">
+              <svg data-pause-icon viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.5" height="12" rx="0.6"/><rect x="8.5" y="1" width="3.5" height="12" rx="0.6"/></svg>
+              <svg data-play-icon viewBox="0 0 14 14" fill="currentColor" style="display:none"><path d="M2.5 1.2 v11.6 a0.5 0.5 0 0 0 0.78 0.42 l9 -5.8 a0.5 0.5 0 0 0 0 -0.84 l-9 -5.8 A0.5 0.5 0 0 0 2.5 1.2 z"/></svg>
+            </button>
+
+            <div class="transport__center">
+              <div class="transport__track" data-track>
+                <div class="transport__track-rail"><div class="transport__track-fill" data-fill></div></div>
+                <div class="transport__markers" data-markers></div>
+                <div class="transport__head" data-head></div>
+              </div>
+              <div class="transport__chapters" data-chapters></div>
+            </div>
+
+            <div class="transport__time">
+              <span class="transport__time-current" data-time-current>0:00</span>
+              <span> / </span>
+              <span data-time-total>0:10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats below film -->
+        <div class="film-strip" aria-label="Carbly by the numbers">
+          <div class="film-strip__cell">
+            <span class="film-strip__eyebrow">01 · Snap</span>
+            <span class="film-strip__value">1 photo</span>
+            <span class="film-strip__sub">Optional voice context for sharper estimates.</span>
+          </div>
+          <div class="film-strip__cell">
+            <span class="film-strip__eyebrow">02 · Estimate</span>
+            <span class="film-strip__value">4s typical</span>
+            <span class="film-strip__sub">Net carbs, fat, protein, fiber, electrolytes.</span>
+          </div>
+          <div class="film-strip__cell">
+            <span class="film-strip__eyebrow">03 · Privacy</span>
+            <span class="film-strip__value">Discarded</span>
+            <span class="film-strip__sub">Photos analyzed in memory, never stored.</span>
+          </div>
+          <div class="film-strip__cell">
+            <span class="film-strip__eyebrow">04 · Free</span>
+            <span class="film-strip__value">3 / day</span>
+            <span class="film-strip__sub">Unlimited barcodes. 7-day Premium trial.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============== TALK TO YOUR FOOD ============== -->
+    <section class="talk" id="talk" data-screen-label="Talk to your food">
+      <div class="talk__inner">
+        <div class="talk__copy">
+          <span class="talk__eye">Voice context · Premium</span>
+          <h2 class="talk__h2">Talk to<br>your <em>food</em>.</h2>
+          <p class="talk__body">A photo guesses the portion. Two sentences sharpen it. Hold the mic and say what's on the plate — Carbly transcribes on-device, feeds your context into the estimate, and discards the audio immediately.</p>
+          <div class="talk__quotes">
+            <span class="talk__quote">"double cheeseburger, no fries"<span class="label">Locks the dish</span></span>
+            <span class="talk__quote">"brioche bun, extra cheese"<span class="label">Catches hidden carbs</span></span>
+            <span class="talk__quote">"six ounces of chicken thigh"<span class="label">Pins the portion</span></span>
+          </div>
+          <p class="talk__caption">Transcribed on-device · audio never uploaded</p>
+        </div>
+
+        <aside class="talk__viz" aria-label="Voice context demo">
+          <div class="talk__viz-head">
+            <span class="talk__viz-rec">REC · 0:04</span>
+            <span>VOICE CONTEXT</span>
+          </div>
+          <div class="talk__viz-wave" data-talk-wave></div>
+          <div class="talk__viz-transcript" data-talk-transcript>
+            <span class="word">double cheeseburger</span><span class="sep word">·</span><span class="word">brioche bun</span><span class="sep word">·</span><span class="word">no fries</span><span class="sep word">·</span><span class="word">extra cheese</span>
+          </div>
+          <div class="talk__viz-impact">
+            <div class="talk__viz-cell">
+              <span class="talk__viz-cell-eye">Confidence</span>
+              <span class="talk__viz-cell-val is-up">94%</span>
+              <span class="talk__viz-cell-sub">vs 85% without</span>
+            </div>
+            <div class="talk__viz-cell">
+              <span class="talk__viz-cell-eye">Est. range</span>
+              <span class="talk__viz-cell-val">±5%</span>
+              <span class="talk__viz-cell-sub">vs ±12% without</span>
+            </div>
+            <div class="talk__viz-cell">
+              <span class="talk__viz-cell-eye">Audio kept</span>
+              <span class="talk__viz-cell-val">0s</span>
+              <span class="talk__viz-cell-sub">Deleted on transcribe</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============== FEATURES ============== -->
+    <section class="section" id="features" data-screen-label="Features">
+      <div class="container container--wide">
+
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">What it does</span>
+            <h2>The whole low-carb stack — one tab away.</h2>
+          </div>
+          <p>Scanning is the front door. Behind it: a Carbly Score that tracks adherence to <em>your</em> targets, a fasting timer with research-grounded zones, and an electrolyte dashboard most competitors gate.</p>
+        </div>
+
+        <div class="bento">
+
+          <!-- Scan, hero cell -->
+          <article class="bento__cell bento__cell--scan">
+            <div class="bento__scan-text">
+              <span class="bento__eyebrow">01 · Scan</span>
+              <h3 class="bento__title">Photograph the plate.<br>Get the numbers.</h3>
+              <p class="bento__body">AI estimates net carbs, macros, fiber, and electrolytes from one photo. Add a voice note ("brioche bun, no fries") for tighter estimates.</p>
+            </div>
+            <div class="bento__scan-frame">
+              <picture>
+                <img src="assets/img/snapshots/scan-result-v2.png" loading="lazy" decoding="async" alt="Carbly scan result screen for a Double Cheeseburger showing 38g net carbs, 28 Health Score, macros, and electrolytes.">
+              </picture>
+            </div>
+          </article>
+
+          <!-- Carbly Score -->
+          <article class="bento__cell bento__cell--score">
+            <span class="bento__eyebrow">02 · Carbly Score</span>
+            <h3 class="bento__title" style="color:var(--bone)">Adherence,<br>as one number.</h3>
+            <div class="bento__score-num">78</div>
+            <div class="bento__score-meta">vs target · last 7 days</div>
+            <div class="bento__score-bar"><div class="bento__score-bar-fill"></div></div>
+          </article>
+
+          <!-- Fasting -->
+          <article class="bento__cell bento__cell--fast">
+            <span class="bento__eyebrow">03 · Fasting</span>
+            <h3 class="bento__title">Time your fast.<br>See the zones.</h3>
+            <div class="bento__fast-row">
+              <div class="bento__fast-time">10:00</div>
+              <div class="bento__fast-pct">63% · FAT-BURN</div>
+            </div>
+            <p class="bento__body" style="margin-top:8px">16:8, 18:6, 20:4, OMAD or custom. Zone labels reflect typical research timing.</p>
+            <div class="bento__fast-zones">
+              <span class="bento__fast-zone is-past"></span>
+              <span class="bento__fast-zone is-past"></span>
+              <span class="bento__fast-zone is-current"></span>
+              <span class="bento__fast-zone"></span>
+              <span class="bento__fast-zone"></span>
+            </div>
+          </article>
+
+          <!-- Tracking / history -->
+          <article class="bento__cell bento__cell--track">
+            <span class="bento__eyebrow">04 · Track</span>
+            <h3 class="bento__title">Every meal, every macro.</h3>
+            <p class="bento__body">Searchable history. Net carbs <em>left</em>, not just eaten.</p>
+            <div style="display:flex; gap:6px; margin-top:auto; flex-wrap:wrap">
+              <span class="bento__ai-pill" style="background:var(--surface)">10 / 20g</span>
+              <span class="bento__ai-pill" style="background:var(--surface)">10g left</span>
+            </div>
+          </article>
+
+          <!-- Electrolytes -->
+          <article class="bento__cell bento__cell--electro">
+            <span class="bento__eyebrow">05 · Electrolytes</span>
+            <h3 class="bento__title">Sodium &middot; potassium &middot; magnesium.</h3>
+            <div class="bento__electro-row">
+              <div class="bento__electro-line">
+                <span class="bento__electro-dot" style="background:var(--electrolyte-na)"></span>
+                <span class="bento__electro-tag">Sodium</span>
+                <div class="bento__electro-bar"><div class="bento__electro-bar-fill" style="width:60%; background:var(--electrolyte-na)"></div></div>
+                <span class="bento__electro-num">2.1g</span>
+              </div>
+              <div class="bento__electro-line">
+                <span class="bento__electro-dot" style="background:var(--electrolyte-k)"></span>
+                <span class="bento__electro-tag">Potassium</span>
+                <div class="bento__electro-bar"><div class="bento__electro-bar-fill" style="width:78%; background:var(--electrolyte-k)"></div></div>
+                <span class="bento__electro-num">2.7g</span>
+              </div>
+              <div class="bento__electro-line">
+                <span class="bento__electro-dot" style="background:var(--electrolyte-mg)"></span>
+                <span class="bento__electro-tag">Magnesium</span>
+                <div class="bento__electro-bar"><div class="bento__electro-bar-fill" style="width:42%; background:var(--electrolyte-mg)"></div></div>
+                <span class="bento__electro-num">168mg</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ask Carbly -->
+          <article class="bento__cell bento__cell--ai">
+            <span class="bento__eyebrow">06 · Ask Carbly</span>
+            <h3 class="bento__title">Swaps, hidden carbs, label reads.</h3>
+            <p class="bento__body">Tap to ask: "What's hiding in this sauce?" or "Lower-carb swap for jasmine rice?" Factual, no verdicts.</p>
+            <div style="display:flex; gap:6px; margin-top:auto; flex-wrap:wrap">
+              <span class="bento__ai-pill">Hidden carbs</span>
+              <span class="bento__ai-pill">Swap suggestion</span>
+              <span class="bento__ai-pill">Label OCR</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== HOW IT WORKS ============== -->
+    <section class="section section--alt" id="how" data-screen-label="How it works">
+      <div class="container container--wide">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2>Three steps. No database trawl.</h2>
+          </div>
+          <p>Carbly never asks you to type a portion size in grams, scroll a 40,000-row food list, or pick the wrong Caesar salad. Just point and shoot.</p>
+        </div>
+
+        <ol class="how">
+          <li class="how__step">
+            <span class="how__num">01</span>
+            <span class="how__verb">Snap</span>
+            <p class="how__body">Point your camera at the plate. Hit the shutter. The frame routes to the AI, which only processes the request — never stores it, never trains on it.</p>
+            <span class="how__tag">≈ 0.2s</span>
+          </li>
+          <li class="how__step">
+            <span class="how__num">02</span>
+            <span class="how__verb">Verify</span>
+            <p class="how__body">Review the AI estimate. Adjust portion or add a voice note if the plate's bigger than it looks. The estimate updates live.</p>
+            <span class="how__tag">≈ 4s</span>
+          </li>
+          <li class="how__step">
+            <span class="how__num">03</span>
+            <span class="how__verb">Log</span>
+            <p class="how__body">Tap save. Your net carbs, macros, and electrolyte totals update across Dashboard, Food Log, and Carbly Score instantly.</p>
+            <span class="how__tag">≈ 1 tap</span>
+          </li>
+        </ol>
+
+        <p class="how__foot">
+          <span class="how__foot-eye">Privacy contract</span>
+          Photos are analyzed in memory and discarded after the result returns. AI providers process the request only — zero retention, zero training, no human review.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== PRICING — RECEIPT ============== -->
+    <section class="section" id="pricing" data-screen-label="Pricing">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Pricing</span>
+            <h2>One subscription.<br>Three billing rhythms.</h2>
+          </div>
+          <p>Free tier covers 3 AI scans/day, unlimited barcode scans, fasting timer, electrolyte tracking, streaks, and the full net-carb dashboard. Premium removes the daily AI cap and unlocks the rest.</p>
+        </div>
+
+        <div class="pricing">
+          <div class="pricing__head">
+            <div class="pricing__head-left">
+              <span class="eyebrow">Carbly Premium</span>
+              <span class="pricing__title">Receipt · all plans</span>
+            </div>
+            <span class="pricing__order">Order #CLY-001</span>
+          </div>
+
+          <div class="pricing__rows">
+            <div class="pricing__row is-best">
+              <div class="pricing__row-name">Annual<small>Best value · $1.15 / wk</small></div>
+              <div class="pricing__row-cadence">/ year</div>
+              <div class="pricing__row-price">$59.99</div>
+            </div>
+            <div class="pricing__row">
+              <div class="pricing__row-name">Monthly<small>Flexible, no commitment</small></div>
+              <div class="pricing__row-cadence">/ month</div>
+              <div class="pricing__row-price">$9.99</div>
+            </div>
+            <div class="pricing__row">
+              <div class="pricing__row-name">Weekly<small>Try it for the week</small></div>
+              <div class="pricing__row-cadence">/ week</div>
+              <div class="pricing__row-price">$4.99</div>
+            </div>
+          </div>
+
+          <div class="pricing__includes">
+            <div class="pricing__includes-head">All plans include</div>
+            <ul class="pricing__bullets">
+              <li class="pricing__bullet"><span><strong>High-volume AI scans</strong> — daily free cap removed</span></li>
+              <li class="pricing__bullet"><span><strong>Voice context</strong> — portion + prep details by voice</span></li>
+              <li class="pricing__bullet"><span><strong>Fasting zone timer</strong> — overtime alerts included</span></li>
+              <li class="pricing__bullet"><span><strong>Full meal history</strong> — every scan searchable</span></li>
+              <li class="pricing__bullet"><span><strong>Daily electrolyte targets</strong> — sodium, potassium, magnesium</span></li>
+              <li class="pricing__bullet"><span><strong>Streak with grace days</strong> — one grace day / week</span></li>
+            </ul>
+          </div>
+
+          <div class="pricing__foot">
+            <span>7-day free trial · cancel in iOS Settings</span>
+            <span>$0.00 today</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PRIVACY ============== -->
+    <section class="section section--alt" id="privacy" data-screen-label="Privacy">
+      <div class="container container--wide">
+        <div class="privacy">
+          <div class="privacy__copy">
+            <span class="eyebrow">Privacy</span>
+            <h2>Photos go to AI.<br>Then they're gone.</h2>
+            <p>Photos are analyzed in memory and discarded — never stored on our servers. Voice is transcribed on-device and the raw audio is deleted immediately. We don't sell your data, and your food log is yours alone.</p>
+            <div class="privacy__chips">
+              <span class="privacy__chip">No photo storage</span>
+              <span class="privacy__chip">On-device voice</span>
+              <span class="privacy__chip">No ad tracking</span>
+              <span class="privacy__chip">Delete account</span>
+            </div>
+            <a href="/privacy" class="btn btn-link">Read the full Privacy Policy</a>
+          </div>
+
+          <aside class="privacy__diagram" aria-label="Data lifecycle">
+            <div class="privacy__diagram-foot">Photo lifecycle</div>
+            <div class="privacy__diagram-row">
+              <span class="privacy__diagram-label">Your phone</span>
+              <span class="privacy__diagram-arrow"></span>
+              <span class="privacy__diagram-status">CAPTURE</span>
+            </div>
+            <div class="privacy__diagram-row">
+              <span class="privacy__diagram-label">Carbly worker</span>
+              <span class="privacy__diagram-arrow"></span>
+              <span class="privacy__diagram-status is-ok">ROUTE</span>
+            </div>
+            <div class="privacy__diagram-row">
+              <span class="privacy__diagram-label">AI provider</span>
+              <span class="privacy__diagram-arrow"></span>
+              <span class="privacy__diagram-status">ANALYZE</span>
+            </div>
+            <div class="privacy__diagram-row" style="background:var(--bone)">
+              <span class="privacy__diagram-label" style="color:var(--text-secondary)">Photo bytes</span>
+              <span class="privacy__diagram-arrow"></span>
+              <span class="privacy__diagram-status is-del">STORED</span>
+            </div>
+            <div class="privacy__diagram-row">
+              <span class="privacy__diagram-label">Your food log</span>
+              <span class="privacy__diagram-arrow"></span>
+              <span class="privacy__diagram-status is-ok">SAVED</span>
+            </div>
+            <div class="privacy__diagram-foot">Result text only · per Carbly Privacy Policy</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section class="section" data-screen-label="FAQ">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Quick answers.</h2>
+          </div>
+          <p>Short, factual. If you have a question that isn't here, email us at the address in the footer.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__summary">How accurate is the AI estimate?<span class="faq__plus"></span></summary>
+            <div class="faq__body">Carbly estimates fall within ±12% of label values on typical plates. Adding a voice note ("6 oz chicken thigh, ranch on the side") tightens the range. Every result carries an "AI estimate" disclaimer — verify against nutrition labels when they're available.</div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__summary">What does the free tier include?<span class="faq__plus"></span></summary>
+            <div class="faq__body">3 AI scans/day, unlimited barcode scans, fasting timer, electrolyte tracking, streak with weekly grace day, and the full net-carb dashboard. No card required.</div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__summary">Do you store my photos?<span class="faq__plus"></span></summary>
+            <div class="faq__body">No. Photos are routed to the AI provider, analyzed in memory, and discarded. Only the structured result text (e.g. "4g net carbs · 32g fat") is saved to your account.</div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__summary">Is Carbly on Android?<span class="faq__plus"></span></summary>
+            <div class="faq__body">iOS first, iOS only — for now. Android is on the roadmap; the cross-platform groundwork is underway. Sign up below to be notified when it ships.</div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__summary">Is Carbly medical advice?<span class="faq__plus"></span></summary>
+            <div class="faq__body">No. Carbly is a tracker. It reports factual numbers — calories, macros, electrolytes — and never tells you what to eat, when to fast, or what your "ketosis state" is. Talk to a healthcare provider for dietary decisions.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ENDCAP ============== -->
+    <section class="endcap" id="download" data-screen-label="Download">
+      <div class="container container--wide">
+        <div class="endcap__inner">
+          <div>
+            <h2 class="endcap__title">Get the photo over with.<br>Carbly does the rest.</h2>
+            <p class="endcap__sub">Now on the App Store. 7 days free, no card today. Cancel from iOS Settings anytime.</p>
+          </div>
+          <div class="endcap__ctas">
+            <a class="appstore-badge" href="#">
+              <svg class="appstore-badge__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.93 2.39-4.35 2.5-4.42-1.36-1.99-3.49-2.26-4.24-2.29-1.81-.18-3.53 1.06-4.45 1.06-.92 0-2.33-1.04-3.84-1.01-1.98.03-3.81 1.15-4.83 2.92-2.06 3.57-.53 8.84 1.48 11.74.99 1.42 2.16 3.02 3.7 2.96 1.49-.06 2.06-.96 3.86-.96 1.8 0 2.31.96 3.88.93 1.6-.03 2.62-1.45 3.6-2.88 1.13-1.66 1.6-3.27 1.63-3.36-.04-.02-3.13-1.2-3.16-4.76zM14.36 3.86c.82-1 1.38-2.39 1.22-3.78-1.18.05-2.61.79-3.46 1.79-.76.88-1.43 2.3-1.25 3.66 1.31.1 2.65-.66 3.49-1.67z"/></svg>
+              <span class="appstore-badge__stack">
+                <span class="appstore-badge__small">Download on the</span>
+                <span class="appstore-badge__big">App Store</span>
+              </span>
+            </a>
+            <span class="endcap__caption">Bundle 22 MB · iOS 17+ · iPhone &amp; iPad</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div>
+        <a class="site-footer__brand" href="/" aria-label="Carbly home">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/img/launchmark-dark.png">
+            <img class="site-footer__mark" src="assets/img/launchmark.png" alt="" width="24" height="24" loading="lazy">
+          </picture>
+          <span>carbly</span>
+        </a>
+        <p class="site-footer__disclaimer">AI estimate. Verify with nutrition labels when available. Not medical advice — talk to a healthcare provider for dietary decisions. Contact: <a href="mailto:nahuelcp.dev@gmail.com">nahuelcp.dev@gmail.com</a></p>
+        <p class="site-footer__copyright">© 2026 Carbly · Made in iOS · v1.0</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+        <a href="mailto:nahuelcp.dev@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/image-slot.js"></script>
+  <script src="assets/js/hero-film.js"></script>
+</body>
+</html>
