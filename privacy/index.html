@@ -37,9 +37,9 @@
 </header>
   <main id="main" class="prose">
 <h1>Carbly Privacy Policy</h1>
-<p><strong>Effective date:</strong> 2026-05-26
-<strong>Last updated:</strong> 2026-05-26
-<strong>Version:</strong> 1.2</p>
+<p><strong>Effective date:</strong> 2026-05-28
+<strong>Last updated:</strong> 2026-05-28
+<strong>Version:</strong> 1.3</p>
 <p>This Privacy Policy describes how Carbly ("we", "us", "our") collects, uses, stores, shares, and protects personal information when you use the Carbly iOS application ("the App"). By using the App you agree to the practices described below.</p>
 <p>This policy is written to satisfy the requirements of Apple's App Store Review Guideline 5.1.1, the EU General Data Protection Regulation (GDPR), the UK Data Protection Act 2018, the California Consumer Privacy Act (CCPA) as amended by the CPRA, and the Children's Online Privacy Protection Act (COPPA).</p>
 <hr />
@@ -135,14 +135,19 @@ Data Protection contact (DPO): <code>nahuelcp.dev@gmail.com</code></p>
 <p>Our analytics provider records product interaction events: screens viewed, paywall shown and dismissed, scan started and completed, fast started and ended, settings changed. We deliberately do not ship user-entered text (food names, voice transcripts, product names) as event properties. Instead we send bucketed categorical values (for example, low / medium / high net-carb buckets; scan / manual / barcode log source). These events are identified by your anonymous user identifier for retention and funnel analysis, but the payloads themselves contain no personal text.</p>
 <h3>3.10 Feature flags</h3>
 <p>The same analytics provider evaluates feature flags based on your anonymous user identifier (or, in pre-identify sessions, a pseudonymous install identifier generated once and persisted on-device). Feature flag decisions control which copy variants and gradual rollouts you see. No new data category is collected for this purpose; the identifier used to evaluate the flag is the same one already covered in section 3.1.</p>
+<h3>3.11 Coach chat messages</h3>
+<p>If you use the in-app Coach (chat), the messages you send and the Coach's replies are stored against your anonymous user identifier, and your messages plus the context needed to answer them are sent to a third-party AI provider (see section 4.2). We classify chat content under the App Store Privacy Label "Other User Content" category.</p>
 <hr />
 <h2>4. How data is processed and who receives it</h2>
 <p>Carbly engages a small number of third-party sub-processors to deliver the App's functionality. Each sub-processor receives only the data needed for its specific role and is bound by data-processing terms consistent with this Policy.</p>
 <h3>4.1 Backend infrastructure (transit and storage)</h3>
 <p>Authenticated requests from the App go to our backend. The backend authenticates your session, forwards AI requests to the AI provider, and persists your account data (profile, food logs, fasting logs, daily streaks). Backend operational logs containing request metadata (anonymous user identifier, timestamp, response code) are retained for a limited duration and then automatically deleted. No image bytes, no voice transcripts, and no scan results are written to these logs.</p>
-<h3>4.2 AI inference provider</h3>
-<p>Scan images and the accompanying voice transcript text are sent to a third-party AI provider for analysis. The AI provider acts as a sub-processor. Inputs and outputs are retained by the provider for a limited duration solely for trust, safety, and abuse-monitoring purposes, after which they are automatically deleted. Inputs and outputs are not used to train the provider's models under our agreement.</p>
-<p><strong>Weekly Intelligence digest:</strong> If you are a Carbly Premium subscriber and have enabled Weekly Insights in Settings, the App also sends a structured summary of your aggregated weekly data (net-carb averages, fasting session counts, activity totals, streak counts, electrolyte log summaries — no raw food photos, no voice audio, no food names) to the AI provider once per week. The AI-generated weekly insight prose is returned and stored against your account. The same limited retention and processing terms described above apply. Weekly Insights can be disabled at any time in Settings → Intelligence.</p>
+<h3>4.2 AI providers</h3>
+<p>Carbly uses two third-party AI services as data sub-processors, selected per feature. All AI requests are mediated by our backend; your device never calls an AI provider directly. Neither provider uses your inputs or outputs to train its models, and each retains API inputs and outputs for up to 30 days (for trust, safety, and abuse-monitoring purposes only), after which they are automatically deleted.</p>
+<p><strong>Scan analysis — Anthropic (Claude Haiku 4.5).</strong> When you scan a food photo, the metadata-stripped image and any accompanying voice transcript text are sent to Anthropic's Claude Haiku 4.5 model for analysis. Anthropic acts as a data sub-processor under its Commercial Terms.</p>
+<p><strong>Coach chat — xAI (Grok 4.3).</strong> When you send a message to the in-app Coach, your message and the context needed to answer it — which may include your profile inputs, recent food and fasting logs, and, if you have chosen to provide it, your GLP-1 medication status — are sent to xAI's Grok 4.3 model to generate the reply. Your messages and the Coach's replies are stored against your anonymous user identifier. xAI acts as a data sub-processor under its Enterprise Terms.</p>
+<p><strong>Weekly Intelligence digest — xAI (Grok 4.3).</strong> If you are a Carbly Premium subscriber and have enabled Weekly Insights in Settings, the App sends a structured summary of your aggregated weekly data (net-carb averages, fasting session counts, activity totals, streak counts, electrolyte log summaries — no raw food photos, no voice audio, no food names) to xAI's Grok 4.3 model once per week. The AI-generated weekly insight prose is returned and stored against your account. Weekly Insights can be disabled at any time in Settings → Intelligence.</p>
+<p>We maintain data-processing terms with both Anthropic and xAI that require each provider to protect your data at a level consistent with this Policy.</p>
 <h3>4.3 Subscription management provider</h3>
 <p>Subscription purchase state, renewal status, and trial eligibility are synchronized with our subscription management provider. The provider receives your anonymous user identifier, your Apple-issued original transaction identifier, and the product identifier you purchased. The provider does not receive any food log, fasting log, or profile data.</p>
 <h3>4.4 Product analytics provider</h3>
@@ -165,9 +170,14 @@ Data Protection contact (DPO): <code>nahuelcp.dev@gmail.com</code></p>
 <td>Operational logs retained for a limited duration; persistent user data retained until account deletion</td>
 </tr>
 <tr>
-<td>AI inference</td>
-<td>Stripped scan image, voice transcript text, structured prompt; aggregated weekly data summary (Intelligence digest, premium only)</td>
-<td>Limited abuse-monitoring retention then auto-deleted; not used for model training</td>
+<td>AI inference — scan (Anthropic, Claude Haiku 4.5)</td>
+<td>Stripped scan image, voice transcript text, structured scan prompt</td>
+<td>Up to 30 days abuse-monitoring retention then auto-deleted; not used for model training</td>
+</tr>
+<tr>
+<td>AI inference — Coach chat + Weekly Intelligence (xAI, Grok 4.3)</td>
+<td>Chat messages + context (profile, recent logs, GLP-1 status if provided); aggregated weekly data summary (premium only)</td>
+<td>Up to 30 days abuse-monitoring retention then auto-deleted; not used for model training</td>
 </tr>
 <tr>
 <td>Subscription management</td>
