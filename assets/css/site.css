@@ -73,7 +73,10 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+/* Safety net against accidental horizontal scroll on phones. `clip` (not `hidden`)
+   keeps the sticky header working because it does not establish a scroll container. */
+body { overflow-x: clip; }
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -1485,6 +1488,20 @@ button { font-family: inherit; }
   .film-strip__cell:nth-child(4) { border-left: 1px solid var(--line); }
 }
 
+/* Hero film on phones: the 16:9 stage is far too short for the (min) 220px
+   phone mockup, clipping it ~143px top and bottom to a cramped sliver. Swap to
+   a fixed portrait height so the whole phone sits inside it. Fixed height (not
+   a portrait aspect-ratio) keeps the stage sane — an aspect-ratio would scale
+   with width and balloon on larger screens. The 5 transport chapter labels
+   ("AIM/SNAP/TALK/ANALYZE/LOG" + times) collide at this width, so hide them;
+   the scrubber and in-stage scene caption still convey progress.
+   (Placed after the .film__stage / .transport__chapters base rules so these
+   overrides win on source order.) */
+@media (max-width: 600px) {
+  .film__stage { aspect-ratio: auto; height: 540px; }
+  .transport__chapters { display: none; }
+}
+
 /* ===========================================================================
    Talk-to-your-food highlight
    =========================================================================== */
@@ -1733,6 +1750,12 @@ button { font-family: inherit; }
 @media (max-width: 880px) {
   .talk__inner { grid-template-columns: 1fr; gap: 32px; }
   .talk__h2 { font-size: clamp(44px, 12vw, 76px); }
+  /* Single-column grid items default to min-width:auto, which lets wide
+     children (the max-content quote pills) blow the column past the viewport
+     and force a horizontal scroll. Let the tracks shrink to the column. */
+  .talk__copy, .talk__viz { min-width: 0; }
+  .talk__quote { width: 100%; max-width: 100%; flex-wrap: wrap; row-gap: 4px; }
+  .talk__viz-cell { min-width: 0; }
 }
 
 /* ===========================================================================
@@ -1993,6 +2016,38 @@ button { font-family: inherit; }
 @media (max-width: 600px) {
   .bento { grid-template-columns: 1fr; }
   .bento__cell { grid-column: 1 !important; }
+
+  /* Scan cell uses absolute positioning for the desktop 2-row hero layout,
+     which collapses to an empty card with a clipped screenshot on phones.
+     Re-flow it as a normal column: copy on top, screenshot rising in below. */
+  .bento__cell--scan {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 24px 24px 0;
+    gap: 18px;
+  }
+  .bento__scan-text { position: static; inset: auto; }
+  .bento__scan-frame {
+    position: static;
+    inset: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 300px;
+    margin: 0 -24px 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .bento__scan-frame img,
+  .bento__scan-frame picture {
+    width: 248px;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, 0.16);
+  }
 }
 
 /* ===========================================================================
@@ -2503,3 +2558,44 @@ button { font-family: inherit; }
 .prose ul { list-style: disc; }
 .prose ol { list-style: decimal; }
 .prose a { color: var(--accent); text-decoration: underline; }
+
+/* ===========================================================================
+   Mobile QA polish — fixes from the phone-width QA pass.
+   Appended at end of file so these overrides win on source order.
+   =========================================================================== */
+@media (max-width: 600px) {
+  /* Tap targets: lift sub-44px controls toward a comfortable hit area. */
+  .site-header__cta { height: 44px; }
+  .btn-link { padding: 8px 0; }
+  .site-footer__links { gap: 20px; }
+  .site-footer__links a { padding: 8px 4px; }
+
+  /* Pricing receipt never had a mobile pass: stack the header so the title
+     gets full width, and stop the order id + per-week sublabel from breaking
+     mid-token ("#CLY-001", "$1.15 / wk"). */
+  .pricing__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .pricing__order { white-space: nowrap; }
+  .pricing__row-name small { white-space: nowrap; }
+}
+
+@media (max-width: 480px) {
+  /* Hero stat row: 3 even columns instead of a 2 + 1 orphan ("Photos stored"). */
+  .hero__meta-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 14px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* "Always-dark" cards (voice card, Carbly Score, endcap CTA) were built on the
+     --ink / --bone token pair, which SWAPS in dark mode — flipping them to light
+     and hiding their near-white interior text (the endcap lost its whole pitch
+     paragraph). Re-pin the tokens locally so each card and every
+     var(--ink)/var(--bone) descendant — including the inline-styled score title —
+     renders dark-surface / light-text in dark mode too. */
+  .talk__viz,
+  .bento__cell--score,
+  .endcap__inner {
+    --ink: #1B1E22;
+    --bone: #EDEAE3;
+  }
+  /* Voice quote pills were near-invisible (surface ≈ page bg); lift them. */
+  .talk__quote { background: var(--surface-raised); }
+}
